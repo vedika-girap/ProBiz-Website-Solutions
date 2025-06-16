@@ -15,19 +15,6 @@ Clean, modern, and responsive websites tailored to elevate your business presenc
 
 ---
 
-## 📁 Project Structure
-├── index.html # Main landing page
-├── partials/
-│ ├── header.html # Header component (injected dynamically)
-│ └── footer.html # Footer component
-├── assets/
-│ └── js/
-│ └── theme_toggle.js # Theme switching logic
-├── README.md # This file
-
-
----
-
 ## 🛠️ Tech Stack
 
 - [Tailwind CSS CDN](https://tailwindcss.com/docs/installation/play-cdn)
