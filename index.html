@@ -1,0 +1,156 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProBiz - Professional Website Pack</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    .typewriter h2 {
+      overflow: hidden;
+      border-right: .15em solid orange;
+      white-space: nowrap;
+      animation:
+        typing 3s steps(30, end),
+        blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+
+    body.dark {
+      background-color: #1f2937;
+      color: #f9fafb;
+    }
+
+    .dark header,
+    .dark footer {
+      background-color: #1f2937;
+      color: #d1d5db;
+    }
+
+    .dark .bg-white {
+      background-color: #1f2937 ;
+    }
+    .dark .bg-blue-50 {
+      background-color: #0d1724 !important;
+    }
+
+    .dark .text-gray-600,
+    .dark .text-gray-900,
+    .dark .text-gray-700 {
+      color: #f1f1f1 !important;
+    }
+
+    .dark .border {
+      border-color: #4b5563;
+    }
+
+    .dark .shadow {
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    /* .dark .shadow-lg {
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+} */
+
+    .dark .section {
+      background-color: #374151;
+      color: #e5e7eb;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans dark:bg-gray-800">
+
+
+  <div id="header"></div>
+
+  
+
+<section id="home" class="py-20 bg-blue-50 dark:bg-gray-900 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 text-center typewriter">
+    <div class="inline-block px-8 py-6 rounded-xl shadow-lg
+                bg-white/80 backdrop-blur-md
+                dark:bg-gray-800/50 dark:backdrop-blur-lg
+                transition-all duration-500">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+        Your Professional Web Presence Starts Here
+      </h2>
+      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">
+        Clean, modern, and responsive websites tailored for your business needs.
+      </p>
+      <a href="contact.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+        Get Started
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Services Preview Section -->
+  <section id="services" class="py-20 bg-white ">
+    <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
+      <h3 class="text-3xl font-semibold mb-8">What You Get</h3>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="p-6 border rounded-xl shadow transform hover:scale-105 hover:shadow-2xl transition duration-300">
+          <h4 class="text-xl font-bold mb-2">Modern Design</h4>
+          <p class="text-gray-600">Visually appealing and tailored to your brand's identity.</p>
+        </div>
+        <div class="p-6 border rounded-xl shadow transform hover:scale-105 hover:shadow-2xl transition duration-300">
+          <h4 class="text-xl font-bold mb-2">Mobile Responsive</h4>
+          <p class="text-gray-600">Optimized for all screen sizes to ensure accessibility.</p>
+        </div>
+        <div class="p-6 border rounded-xl shadow transform hover:scale-105 hover:shadow-2xl transition duration-300">
+          <h4 class="text-xl font-bold mb-2">Fast Loading</h4>
+          <p class="text-gray-600">Lightweight code that ensures high performance and SEO.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Injected Footer -->
+  <div id="footer"></div>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Inject Header/Footer Logic -->
+  <script>
+    async function includeHTML(file, selector) {
+      try {
+        const res = await fetch(file);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      } catch (err) {
+        console.error("Error loading", file, err);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      includeHTML('partials/header.html', '#header');
+      includeHTML('partials/footer.html', '#footer');
+    });
+  </script>
+
+  <!-- Theme Toggle -->
+  <script src="assets/js/theme_toggle.js"></script>
+
+
+</body>
+</html> 

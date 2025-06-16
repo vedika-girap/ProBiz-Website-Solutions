@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - ProBiz</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Dark Mode Styles -->
+  <style>
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .portfolio-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .portfolio-card {
+      transition: all 0.3s ease;
+    }
+
+    body.dark {
+      background-color: #111827;
+      color: #f3f4f6;
+    }
+
+    .dark header {
+      background-color: #1f2937;
+      color: white;
+    }
+
+    .dark footer {
+      background-color: #1f2937;
+      color: #d1d5db;
+    }
+
+    .dark .portfolio-card {
+      background-color: #374151;
+      color: #e5e7eb;
+      border-color: #4b5563;
+    }
+
+    .dark a {
+      color: #93c5fd;
+    }
+
+    .dark input,
+    .dark textarea {
+      background-color: #1f2937;
+      color: #f9fafb;
+      border-color: #374151;
+    }
+
+    .dark .bg-gray-200 {
+      background-color: #1c2230;
+      
+    }
+    .dark .bg-gray-200:hover {
+      background-color: #2e3648;
+      
+    }
+    
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  
+  <!-- Injected Header -->
+  <div id="header"></div>
+
+  <!-- Portfolio Section -->
+  <section class="py-20 px-4 max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-10" data-aos="fade-up">Our Portfolio</h2>
+
+    <!-- 🔘 Filter Buttons -->
+    <div class="flex justify-center mb-10 gap-4 flex-wrap" data-aos="fade-up" data-aos-delay="100">
+      <button class="filter-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 active" data-filter="all">All</button>
+      <button class="filter-btn bg-gray-200 px-4 py-2 rounded hover:bg-blue-100 " data-filter="web">Web Design</button>
+      <button class="filter-btn bg-gray-200 px-4 py-2 rounded hover:bg-blue-100" data-filter="seo">SEO</button>
+      <button class="filter-btn bg-gray-200 px-4 py-2 rounded hover:bg-blue-100" data-filter="branding">Branding</button>
+    </div>
+
+    <!-- 🔲 Cards Grid -->
+    <div id="portfolioGrid" class="grid md:grid-cols-3 gap-10"></div>
+  </section>
+
+  <!-- Injected Footer -->
+  <div id="footer"></div>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Portfolio Content JS -->
+  <script src="assets/js/portfolio_cards.js"></script>
+
+  <!-- Inject Header & Footer -->
+  <script>
+    async function includeHTML(file, selector) {
+      try {
+        const res = await fetch(file);
+        const html = await res.text();
+        const element = document.querySelector(selector);
+        if (element) element.innerHTML = html;
+      } catch (error) {
+        console.error(`Failed to include ${file}`, error);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      includeHTML("partials/header.html", "#header");
+      includeHTML("partials/footer.html", "#footer");
+    });
+  </script>
+
+  <!-- Dark Mode Toggle Logic -->
+  <script src="assets/js/theme_toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - ProBiz</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+
+  <!-- Dark Mode Styles -->
+  <style>
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: #111827;
+      color: #f3f4f6;
+    }
+
+    .dark header,
+    .dark footer {
+      background-color: #1f2937;
+      color: #d1d5db;
+    }
+
+    .dark .bg-white {
+      background-color: #1f2937 !important;
+    }
+
+    .dark .text-gray-700,
+    .dark .text-gray-600 {
+      color: #d1d5db !important;
+    }
+
+    .dark input,
+    .dark textarea {
+      background-color: #374151;
+      color: #f9fafb;
+      border-color: #4b5563;
+    }
+
+    .dark input::placeholder,
+    .dark textarea::placeholder {
+      color: #9ca3af;
+    }
+
+    .dark .shadow {
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+
+  <!-- Contact Form Section -->
+  <section class="py-20 px-4 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center">Contact Us</h2>
+    <form action="https://formspree.io/f/yourFormID" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+        <input name="name" id="name" type="text" placeholder="Your Name"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+        <input name="email" id="email" type="email" placeholder="you@example.com"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      </div>
+      <div class="mb-6">
+        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+        <textarea name="message" id="message" rows="4" placeholder="Your message..."
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+      </div>
+      <div class="flex items-center justify-center">
+        <button type="submit"
+          class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline">
+          Send
+        </button>
+      </div>
+    </form>
+  </section>
+  <div class="mt-6 text-center">
+  <a href="https://wa.me/01233456789" class="text-green-600 underline mr-4">Chat on WhatsApp</a>
+  <a href="https://calendly.com/yourname" class="text-blue-600 underline">Book a Call</a>
+</div>
+  <!-- Footer Placeholder -->
+  <div id="footer"></div>
+
+  <!-- Include Header and Footer -->
+  <script>
+    async function includeHTML(file, selector) {
+      try {
+        const res = await fetch(file);
+        const html = await res.text();
+        const element = document.querySelector(selector);
+        if (element) element.innerHTML = html;
+      } catch (err) {
+        console.error("Error including file:", file, err);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      includeHTML('partials/header.html', '#header');
+      includeHTML('partials/footer.html', '#footer');
+    });
+  </script>
+
+  <!-- Theme Toggle Script -->
+  <script src="assets/js/theme_toggle.js"></script>
+
+</body>
+</html>

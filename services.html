@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - ProBiz</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+
+  <!-- Dark Mode Styles -->
+  <style>
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: #111827;
+      color: #f3f4f6;
+    }
+
+    .dark header {
+      background-color: #1f2937;
+      color: white;
+    }
+
+    .dark footer {
+      background-color: #1f2937;
+      color: #d1d5db;
+    }
+
+    .dark .bg-white,
+    .dark .bg-gray-50 {
+      background-color: #1f2937 !important;
+    }
+
+    .dark .text-gray-600,
+    .dark .text-gray-700 {
+      color: #d1d5db !important;
+    }
+
+    .dark .shadow {
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    .dark table {
+      background-color: #1f2937;
+    }
+
+    .dark th,
+    .dark td {
+      border-color: #374151;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  
+  <!-- Injected Header -->
+  <div id="header"></div>
+
+  <!-- Services Section -->
+  <section class="py-20 px-4 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
+        <h3 class="text-xl font-bold mb-2">🌐 Web Design</h3>
+        <p class="text-gray-600">Beautiful, responsive, and conversion-optimized websites.</p>
+      </div>
+      <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
+        <h3 class="text-xl font-bold mb-2">📈 SEO Optimization</h3>
+        <p class="text-gray-600">Improve your site visibility with best SEO practices.</p>
+      </div>
+      <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
+        <h3 class="text-xl font-bold mb-2">⚡ Speed Optimization</h3>
+        <p class="text-gray-600">Lightning-fast loading to boost user experience and rankings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans -->
+  <section class="py-20 bg-gray-50 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Simple Pricing</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div class="bg-white p-6 shadow rounded-lg">
+          <h3 class="text-xl font-bold mb-2 text-blue-600">Starter</h3>
+          <p class="text-gray-600 mb-4">Basic landing page</p>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li>✅ 1 Page</li>
+            <li>✅ Responsive Design</li>
+            <li>✅ Contact Form</li>
+          </ul>
+          <p class="mt-4 font-bold text-lg">$99</p>
+        </div>
+        <div class="bg-white p-6 shadow-lg border-2 border-blue-600 rounded-lg">
+          <h3 class="text-xl font-bold mb-2 text-blue-600">Standard</h3>
+          <p class="text-gray-600 mb-4">Multi-page business site</p>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li>✅ 3–5 Pages</li>
+            <li>✅ SEO Optimized</li>
+            <li>✅ Speed Optimized</li>
+          </ul>
+          <p class="mt-4 font-bold text-lg">$249</p>
+        </div>
+        <div class="bg-white p-6 shadow rounded-lg">
+          <h3 class="text-xl font-bold mb-2 text-blue-600">Premium</h3>
+          <p class="text-gray-600 mb-4">Everything you need</p>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li>✅ Custom Design</li>
+            <li>✅ Blog/Shop Integration</li>
+            <li>✅ Ongoing Support</li>
+          </ul>
+          <p class="mt-4 font-bold text-lg">$499</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Comparison -->
+  <section class="py-20 px-4 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10">Why Choose Us?</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-sm text-left bg-white shadow rounded-lg overflow-hidden">
+        <thead class="bg-blue-600 text-white">
+          <tr>
+            <th class="px-6 py-3">Feature</th>
+            <th class="px-6 py-3">Other Sellers</th>
+            <th class="px-6 py-3">ProBiz</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          <tr class="border-t">
+            <td class="px-6 py-4">Mobile Responsive</td>
+            <td class="px-6 py-4">❌</td>
+            <td class="px-6 py-4">✅</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-6 py-4">Speed Optimized</td>
+            <td class="px-6 py-4">❌</td>
+            <td class="px-6 py-4">✅</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-6 py-4">Modern UI</td>
+            <td class="px-6 py-4">❌</td>
+            <td class="px-6 py-4">✅</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Injected Footer -->
+  <div id="footer"></div>
+
+  <!-- Inject Header & Footer -->
+  <script>
+    async function includeHTML(file, selector) {
+      try {
+        const res = await fetch(file);
+        const html = await res.text();
+        const element = document.querySelector(selector);
+        if (element) element.innerHTML = html;
+      } catch (err) {
+        console.error("Error including file:", file, err);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      includeHTML("partials/header.html", "#header");
+      includeHTML("partials/footer.html", "#footer");
+    });
+  </script>
+
+  <!-- Dark Mode Toggle Logic -->
+  <script src="assets/js/theme_toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!-- 📄 Save this as 'about.html' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ProBiz</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+  body.dark {
+    background-color: #111827;
+    color: #f3f4f6;
+  }
+
+  .dark header {
+    background-color: #1f2937;
+    color: white;
+  }
+
+  .dark footer {
+    background-color: #1f2937;
+    color: #d1d5db;
+  }
+
+  /* .dark .portfolio-card {
+    background-color: #374151;
+    color: #e5e7eb;
+    border-color: #4b5563;
+  } */
+
+  .dark a {
+    color: #93c5fd;
+  }
+
+  .dark input,
+  .dark textarea,
+  .dark .text-gray-600,
+  .dark .text-gray-700 {
+    /* background-color: #1f2937; */
+    color: #f9fafb;
+    /* border-color: #374151; */
+  }
+
+  .dark .bg-blue-50 {
+    background-color: #1c2230;
+  }
+</style>
+
+
+
+
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <div id="header"></div>
+
+
+
+<section class="py-20 px-4 max-w-5xl mx-auto">
+  <h2 class="text-4xl font-bold text-center mb-12">Who We Are</h2>
+  <p class="text-lg text-gray-600 text-center mb-10">
+    We’re a design-focused web studio helping businesses build modern, high-converting websites. Our mission is to craft digital experiences that are fast, functional, and beautiful.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-8 text-center mt-10">
+    <div>
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">🎯 Mission</h3>
+      <p class="text-gray-600">To empower small businesses with affordable, professional web presence.</p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">💡 Values</h3>
+      <p class="text-gray-600">Transparency, speed, quality, and user-centered design.</p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">🌐 Vision</h3>
+      <p class="text-gray-600">To become a go-to solution for entrepreneurs and creatives worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-blue-50 px-4">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10">Our Process</h2>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="text-blue-600 text-3xl font-bold mb-2">1</div>
+        <h4 class="font-semibold mb-1">Discovery</h4>
+        <p class="text-sm text-gray-600">We understand your goals and brand.</p>
+      </div>
+      <div>
+        <div class="text-blue-600 text-3xl font-bold mb-2">2</div>
+        <h4 class="font-semibold mb-1">Design</h4>
+        <p class="text-sm text-gray-600">We create clean, responsive UI.</p>
+      </div>
+      <div>
+        <div class="text-blue-600 text-3xl font-bold mb-2">3</div>
+        <h4 class="font-semibold mb-1">Develop</h4>
+        <p class="text-sm text-gray-600">We build it with performance in mind.</p>
+      </div>
+      <div>
+        <div class="text-blue-600 text-3xl font-bold mb-2">4</div>
+        <h4 class="font-semibold mb-1">Deliver</h4>
+        <p class="text-sm text-gray-600">We launch and offer support if needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <div id="footer"></div>
+  <script>
+  async function includeHTML(file, selector) {
+    const res = await fetch(file);
+    const html = await res.text();
+    document.querySelector(selector).innerHTML = html;
+  }
+
+  includeHTML('partials/header.html', '#header');
+  includeHTML('partials/footer.html', '#footer');
+</script>
+<script src="assets/js/theme_toggle.js"></script>
+
+</body>
+</html>
+
